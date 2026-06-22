@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: "Arial", sans-serif;
+            font-family: 'Pixeloid', sans-serif;
             margin: 10px;
             user-select: none;
             overflow: hidden;
@@ -30,12 +30,31 @@
             display: flex;
             justify-content: space-between;
             font-size: 14px;
-            padding: 5px;
+            padding: 2px 5px;
             align-items: center;
             height: 35px;
             box-sizing: border-box;
         }
-        .menu-left { display: flex; gap: 20px; }
+
+        .menu-icon-btn {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-sizing: border-box;
+            padding: 0;
+            vertical-align: middle;
+        }
+        .menu-icon-btn img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+        }
+
+        .menu-left { display: flex; gap: 20px; align-items: center; height: 100%; }
+
         .main-area {
             display: flex;
             flex-direction: row !important; /* Столбец слева, холст справа */
@@ -89,73 +108,64 @@
         .menu-right select, .menu-right input { background: white; padding: 1px; margin-left: 5px; }
 
         /* 1. РОЗОВАЯ ТЕМА (theme-pink) */
-        body.theme-pink { background-color: #FBC5D8; }
-        body.theme-pink .window { border-color: #6c2b43; background-color: #FBC5D8; }
+        body.theme-pink { background-color: #FFCCE5; }
+        body.theme-pink .window { border-color: #26000D; background-color: #FFCCE5; }
         body.theme-pink .menu-bar { border-bottom: 2px solid #a64465; }
-        body.theme-pink .menu-right { background-color: #f7a3c0; border: 1px solid #a64465; box-shadow: inset 1px 1px #fff, inset -1px -1px #888; }
-        body.theme-pink .menu-right select, body.theme-pink .menu-right input { border: 1px solid #a64465; }
-        body.theme-pink .dropdown-menu { background-color: #f7a3c0; border: 2px solid #6c2b43; box-shadow: 4px 4px 8px rgba(0,0,0,0.5), inset 1px 1px #fff, inset -1px -1px #888; }
-        body.theme-pink .dropdown-divider { background-color: #a64465; }
-        body.theme-pink .tool-btn { background-color: #f7a3c0; border: 2px solid #6c2b43; box-shadow: inset 2px 2px #fff, inset -2px -2px #888; color: black; }
-        body.theme-pink .tool-btn.active { background-color: #6c2b43; border-color: #000; box-shadow: inset -2px -2px #fff, inset 2px 2px #888; color: white; }
-        body.theme-pink .tool-btn:not(.active):active { box-shadow: inset -2px -2px #fff, inset 2px 2px #888; }
+        body.theme-pink .menu-right { background-color: #FFCCE5; box-shadow: inset 1px 1px #825867, inset -1px -1px #fff; }
+        body.theme-pink .menu-right select, body.theme-pink .menu-right input { border: 1px solid #ffffff; }
+        body.theme-pink .dropdown-menu { background-color: #FFFFBA; border: 4px solid #040452; color: #26000D}
+        body.theme-pink .dropdown-divider { background-color: #040452; }
+        body.theme-pink .tool-btn { background-color: #FFCCE5; border: 2px solid #6c2b43; box-shadow: inset 2px 2px #fff, inset -2px -2px #825867; color: black; }
+        body.theme-pink .tool-btn.active { background-color: #C795B5; border-color: #000; box-shadow: inset -2px -2px #fff, inset 2px 2px #825867; color: white; }
+        body.theme-pink .tool-btn:not(.active):active { box-shadow: inset -2px -2px #fff, inset 2px 2px #825867; }
         body.theme-pink .canvas-container { border: 3px solid #a64465; background-color: #EEF2FF; }
-        body.theme-pink .status-bar { background-color: #f7a3c0; border: 2px solid #a64465; box-shadow: inset 1px 1px #888, inset -1px -1px #fff; }
-        body.theme-pink .menu-trigger:hover, body.theme-pink .menu-trigger.active, body.theme-pink .dropdown-item:hover { background-color: #6c2b43; color: white; }
+        body.theme-pink .status-bar { background-color: #FFCCE5; box-shadow: inset 1px 1px #825867, inset -1px -1px #fff; }
+        body.theme-pink .menu-trigger:hover, body.theme-pink .menu-trigger.active, body.theme-pink .dropdown-item:hover { background-color: #520428; color: white; }
+        body.theme-pink .menu-icon-btn { background-color: #FFCCE5; border: 2px solid #6c2b43; box-shadow: inset 1px 1px #fff, inset -1px -1px #825867; }
+        body.theme-pink .menu-icon-btn:active { background-color: #C795B5; border-color: #000; box-shadow: inset -1px -1px #fff, inset 1px 1px #825867; }
+
         /* 2. СИНЯЯ ТЕМА (theme-blue) */
-        body.theme-blue { background-color: #D2E0FB; }
-        body.theme-blue .window { border-color: #3B5998; background-color: #D2E0FB; }
+        body.theme-blue { background-color: #D5CCFF; }
+        body.theme-blue .window { border-color: #170026; background-color: #D5CCFF; }
         body.theme-blue .menu-bar { border-bottom: 2px solid #3B5998; }
-        body.theme-blue .menu-right { background-color: #89A8E8; border: 1px solid #3B5998; box-shadow: inset 1px 1px #fff, inset -1px -1px #888; }
-        body.theme-blue .menu-right select, body.theme-blue .menu-right input { border: 1px solid #3B5998; }
-        body.theme-blue .dropdown-menu { background-color: #89A8E8; border: 2px solid #3B5998; box-shadow: 4px 4px 8px rgba(0,0,0,0.5), inset 1px 1px #fff, inset -1px -1px #888; }
-        body.theme-blue .dropdown-divider { background-color: #3B5998; }
-        body.theme-blue .tool-btn { background-color: #89A8E8; border: 2px solid #3B5998; box-shadow: inset 2px 2px #fff, inset -2px -2px #888; color: black; }
-        body.theme-blue .tool-btn.active { background-color: #3B5998; border-color: #000; box-shadow: inset -2px -2px #fff, inset 2px 2px #888; color: white; }
-        body.theme-blue .tool-btn:not(.active):active { box-shadow: inset -2px -2px #fff, inset 2px 2px #888; }
+        body.theme-blue .menu-right { background-color: #D5CCFF; box-shadow: inset 1px 1px #6E5882, inset -1px -1px #fff; }
+        body.theme-blue .menu-right select, body.theme-blue .menu-right input { border: 1px solid #ffffff; }
+        body.theme-blue .dropdown-menu { background-color: #FFFFBA; border: 4px solid #040452; color: #26000D}
+        body.theme-blue .dropdown-divider { background-color: #040452; }
+        body.theme-blue .tool-btn { background-color: #D5CCFF; border: 2px solid #3B5998; box-shadow: inset 2px 2px #fff, inset -2px -2px #6E5882; color: black; }
+        body.theme-blue .tool-btn.active { background-color: #3B5998; border-color: #000; box-shadow: inset -2px -2px #fff, inset 2px 2px #6E5882; color: white; }
+        body.theme-blue .tool-btn:not(.active):active { box-shadow: inset -2px -2px #fff, inset 2px 2px #6E5882; }
         body.theme-blue .canvas-container { border: 3px solid #3B5998; background-color: #F0F4FF; }
-        body.theme-blue .status-bar { background-color: #89A8E8; border: 2px solid #3B5998; box-shadow: inset 1px 1px #888, inset -1px -1px #fff; }
+        body.theme-blue .status-bar { background-color: #D5CCFF; box-shadow: inset 1px 1px #6E5882, inset -1px -1px #fff; }
         body.theme-blue .menu-trigger:hover, body.theme-blue .menu-trigger.active, body.theme-blue .dropdown-item:hover { background-color: #3B5998; color: white; }
+        body.theme-blue .menu-icon-btn { background-color: #D5CCFF; border: 2px solid #3B5998; box-shadow: inset 1px 1px #fff, inset -1px -1px #6E5882; }
+        body.theme-blue .menu-icon-btn:active { background-color: #3B5998; border-color: #000; box-shadow: inset -1px -1px #fff, inset 1px 1px #6E5882; }
 
         /* 3. СЕРАЯ ТЕМА (theme-win95) */
-        body.theme-win95 { background-color: #d6d4d4; }
-        body.theme-win95 .window { border: 3px solid #000; background-color: #d6d4d4; }
+        body.theme-win95 { background-color: #C2C2C2; }
+        body.theme-win95 .window { border: 3px solid #000; background-color: #C2C2C2; }
         body.theme-win95 .menu-bar { border-bottom: 2px solid #808080; }
-        body.theme-win95 .menu-right { background-color: #d6d4d4; border: 1px solid #808080; box-shadow: inset 1px 1px #fff, inset -1px -1px #404040; }
-        body.theme-win95 .menu-right select, body.theme-win95 .menu-right input { border: 1px solid #808080; }
-        body.theme-win95 .dropdown-menu { background-color: #d6d4d4; border: 2px solid #000; box-shadow: 4px 4px 8px rgba(0,0,0,0.5), inset 1px 1px #fff, inset -1px -1px #404040; }
-        body.theme-win95 .dropdown-divider { background-color: #808080; }
-        body.theme-win95 .tool-btn { background-color: #d6d4d4; border: 2px solid #808080; box-shadow: inset 2px 2px #fff, inset -2px -2px #404040; color: black; }
-        body.theme-win95 .tool-btn.active { background-color: #b5b5b5; border-color: #000; box-shadow: inset -2px -2px #fff, inset 2px 2px #404040; color: black; }
-        body.theme-win95 .tool-btn:not(.active):active { box-shadow: inset -2px -2px #fff, inset 2px 2px #404040; }
+        body.theme-win95 .menu-right { background-color: #C2C2C2; box-shadow: inset 1px 1px #808080, inset -1px -1px #fff; }
+        body.theme-win95 .menu-right select, body.theme-win95 .menu-right input { border: 1px solid #ffffff; }
+        body.theme-win95 .dropdown-menu { background-color: #FFFFBA; border: 4px solid #040452; color: #26000D}
+        body.theme-win95 .dropdown-divider { background-color: #040452; }
+        body.theme-win95 .tool-btn { background-color: #C2C2C2; border: 2px solid #000; box-shadow: inset 2px 2px #fff, inset -2px -2px #808080; color: black; }
+        body.theme-win95 .tool-btn.active { background-color: #a7a7a7; border-color: #000; box-shadow: inset -2px -2px #fff, inset 2px 2px #808080; color: white; }
+        body.theme-win95 .tool-btn:not(.active):active { box-shadow: inset -2px -2px #fff, inset 2px 2px #808080; }
         body.theme-win95 .canvas-container { border: 3px solid #808080; background-color: #ffffff; }
-        body.theme-win95 .status-bar { background-color: #d6d4d4; border: 2px solid #808080; box-shadow: inset 1px 1px #404040, inset -1px -1px #fff; }
+        body.theme-win95 .status-bar { background-color: #C2C2C2; box-shadow: inset 1px 1px #808080, inset -1px -1px #fff; }
         body.theme-win95 .menu-trigger:hover, body.theme-win95 .menu-trigger.active, body.theme-win95 .dropdown-item:hover { background-color: #000080; color: white; }
+        body.theme-win95 .menu-icon-btn { background-color: #C2C2C2; border: 2px solid #000; box-shadow: inset 1px 1px #fff, inset -1px -1px #808080; }
+        body.theme-win95 .menu-icon-btn:active { background-color: #a7a7a7; border-color: #000; box-shadow: inset -1px -1px #fff, inset 1px 1px #808080; }
 
-        /* Окно приветствия */
-        #welcomeScreen {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #2D2D2D; z-index: 9999; display: flex; flex-direction: column; padding: 30px; box-sizing: border-box;
-        }
-        .welcome-title { color: white; font-size: 32px; font-weight: bold; font-family: "Courier New", monospace; margin-bottom: 20px; }
-        .welcome-box { width: 650px; height: 400px; background-color: #FFFFCC; border: 3px solid #0000FF; cursor: pointer; margin-bottom: 20px; }
-        .welcome-text { color: white; font-size: 16px; line-height: 1.5; font-family: "Courier New", monospace; margin-bottom: 15px; }
+        #toastGreeting { position: absolute;bottom: 30px; left: 75px; width: 520px; height: 339px; background: url('resources/интерфейс/greeting_window.png') no-repeat center center;background-size: contain;box-sizing: border-box;z-index: 99999;color: #26000D;padding: 75px 25px 25px 35px; font-size: 11px;line-height: 1.35;}
+        
+        .toast-close-btn { position: absolute; top: 15px; right: 20px;cursor: pointer; font-weight: bold; font-size: 14px;color: #040452; width: 20px; height: 20px; display: flex; align-items: center;justify-content: center;}
+    
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="theme-pink">
-
-<div id="welcomeScreen">
-    <div class="welcome-title">J-Build Design v0.1.0</div>
-    <div class="welcome-box" onclick="startApp()"></div>
-    <div class="welcome-text">
-        Привет, добро пожаловать в J-Build! :)<br>
-        Здесь ты можешь создать планировку домов, квартир и даже целые жилищные комплексы!
-    </div>
-    <div>
-        <button class="welcome-btn" onclick="startApp()">AHEAD</button>
-        <button class="welcome-btn">LOAD</button>
-        <button class="welcome-btn">HELP</button>
-    </div>
-</div>
 
 <div class="window">
     <div class="menu-bar">
@@ -173,14 +183,21 @@
             <div class="menu-item-container">
                 <span class="menu-trigger" id="viewMenuTrigger">Вид</span>
                 <div class="dropdown-menu" id="viewDropdown" style="left: 60px;">
-                    <div class="dropdown-item" onclick="changeTheme('theme-pink')">1 Розовая тема</div>
-                    <div class="dropdown-item" onclick="changeTheme('theme-blue')">2 Синяя тема</div>
-                    <div class="dropdown-item" onclick="changeTheme('theme-win95')">3 Серая (Win95)</div>
+                    <div class="dropdown-item" onclick="changeTheme('theme-pink')">Розовая тема</div>
+                    <div class="dropdown-item" onclick="changeTheme('theme-blue')">Синяя тема</div>
+                    <div class="dropdown-item" onclick="changeTheme('theme-win95')">Серая (Win95)</div>
                 </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 4px; margin-left: 15px; border-left: 2px solid rgba(0,0,0,0.1); padding-left: 10px;">
+                <button class="menu-icon-btn" id="btn-undo" onclick="undo()" title="Отменить действие"><img src="resources/интерфейс/back.png"></button>
+                <button class="menu-icon-btn" id="btn-redo" onclick="redo()" title="Вернуть действие"><img src="resources/интерфейс/ahead.png"></button>
+                <button class="menu-icon-btn" id="btn-save-quick" onclick="exportToPNG()" title="Быстрое сохранение (PNG)"><img src="resources/интерфейс/save.png"></button>
             </div>
         </div>
         
         <div class="menu-right">
+            <div>Стена (px): <input type="number" id="wallThicknessInput" value="6" min="2" max="30" style="width: 40px;" onchange="if(selectedObject && (selectedObject.type==='wall' || selectedObject.type==='room')) { selectedObject.thickness = parseInt(this.value); saveHistory(); } draw();"></div>
             <div>Шрифт:
                 <select id="fontSelect" onchange="changeFont()">
                     <option value="Arial">Arial</option>
@@ -194,19 +211,27 @@
         <div class="sidebar">
             <button class="tool-btn active" id="btn-select" onclick="setTool('select')" title="Выбор"><span style="font-size:20px;">🖐️</span></button>
             <button class="tool-btn" id="btn-wall" onclick="setTool('wall')" title="Стена"><img src="resources/иконки_на_кнопки/pencil.png"></button>
-            <button class="tool-btn" id="btn-room" onclick="setTool('room')" title="Комната квадратом"><img src="resources/иконки_на_кнопки/rectangle.png"></button>
+            <button class="tool-btn" id="btn-room" onclick="setTool('room')" title="Квадратная комната"><img src="resources/иконки_на_кнопки/rectangle.png"></button>
+            <button class="tool-btn" id="btn-napr" onclick="setTool('napr')" title="Направляющие"><img src="resources/иконки_на_кнопки/napr.png"></button>
+            <button class="tool-btn" id="btn-arrow" onclick="setTool('arrow')" title="Стрелка"><img src="resources/иконки_на_кнопки/arrow.png"></button>
             <button class="tool-btn" id="btn-door" onclick="setTool('door')" title="Дверь"><img src="resources/иконки_на_кнопки/door.png"></button>
-            <button class="tool-btn" id="btn-window" onclick="setTool('window')" title="Окно"><img src="resources/иконки_на_кнопки/rectangle.png"></button>
+            <button class="tool-btn" id="btn-window" onclick="setTool('window')" title="Окно"><img src="resources/иконки_на_кнопки/window.png"></button>
             <button class="tool-btn" id="btn-stairs" onclick="setTool('stairs')" title="Лестница"><img src="resources/иконки_на_кнопки/leader.png"></button>
             <button class="tool-btn" id="btn-toilet" onclick="setTool('toilet')" title="Унитаз"><img src="resources/иконки_на_кнопки/toilet.png"></button>
             <button class="tool-btn" id="btn-rakovina" onclick="setTool('rakovina')" title="Раковина"><img src="resources/иконки_на_кнопки/rakovina.png"></button>
             <button class="tool-btn" id="btn-text" onclick="setTool('text')" title="Текст"><img src="resources/иконки_на_кнопки/text.png"></button>
-            <hr style="width:100%; border-color:#a64465; margin: 2px 0;">
             <button class="tool-btn" style="background-color: #ffcccc;" onclick="deleteSelected()" title="Удалить"><span style="font-size:18px;">🗑️</span></button>
             <button class="tool-btn" style="background-color: #ff9999;" onclick="clearCanvas()" title="Сброс"><span style="font-size:18px;">❌</span></button>
         </div>
         <div class="canvas-container" id="canvasParent">
             <canvas id="editorCanvas"></canvas>
+            
+            <div id="toastGreeting" style="display: none;">
+                <div class="toast-close-btn" onclick="closeToast(event)">×</div>
+                Привет, добро пожаловать в J-Build! :)<br><br>
+                Здесь ты можешь создать планировку домов, квартир и даже целые жилищные комплексы!<br><br>
+                Сайт был вдохновлен в стиле Windows 95 с добавлением японской эстетики 2010-х годов.<br><br>
+            </div>
         </div>
     </div>
     <div class="status-bar" id="statusBar">
@@ -224,7 +249,37 @@
 
     const gridSize = 40; 
     let currentTool = 'select'; 
-    let objects = [];           
+    let objects = [];
+    let historyStates = [];
+    let historyIndex = -1;
+
+    function saveHistory() {
+        if (historyIndex < historyStates.length - 1) {
+            historyStates = historyStates.slice(0, historyIndex + 1);
+        }
+        historyStates.push(JSON.stringify(objects));
+        historyIndex++;
+    }
+
+    function undo() {
+        if (historyIndex > 0) {
+            historyIndex--;
+            objects = JSON.parse(historyStates[historyIndex]);
+            selectedObject = null;
+            draw();
+        }
+    }
+
+    function redo() {
+        if (historyIndex < historyStates.length - 1) {
+            historyIndex++;
+            objects = JSON.parse(historyStates[historyIndex]);
+            selectedObject = null;
+            draw();
+        }
+    }
+    
+    setTimeout(saveHistory, 100);           
     let selectedObject = null;  
     let isDrawing = false;      
     let startX = 0, startY = 0; 
@@ -250,11 +305,9 @@
 
     const images = {};
     const imgSources = {
-        door: 'images_screen/door_screen.png',
-        window: 'images_screen/window_screen.png',
-        stairs: 'images_screen/leader_screen.png',
-        toilet: 'images_screen/toilet_screen.png',
-        rakovina: 'images_screen/rakovina_screen.png'
+        stairs: 'resources/images_screen/leader_screen.png',
+        toilet: 'resources/images_screen/toilet_screen.png',
+        rakovina: 'resources/images_screen/rakovina_screen.png'
     };
 
     const uiImages = {
@@ -276,9 +329,23 @@
     uiImages.left.onload = () => draw();
     uiImages.right.onload = () => draw();
 
-    function startApp() {
-        document.getElementById('welcomeScreen').style.display = 'none';
+    window.addEventListener('load', function() {
         resizeCanvas();
+        if (typeof draw === 'function') draw();
+
+        const toast = document.getElementById('toastGreeting');
+        if (toast) {
+            toast.style.display = 'block';
+            setTimeout(function() {
+                toast.style.display = 'none';
+            }, 30000);
+        }
+    });
+
+    function closeToast(event) {
+        if (event) event.stopPropagation();
+        const toast = document.getElementById('toastGreeting');
+        if (toast) toast.style.display = 'none';
     }
 
     function resizeCanvas() {
@@ -321,31 +388,44 @@
     }
 
     function exportToPNG() {
-        let tempCanvas = document.createElement('canvas');
-        tempCanvas.width = canvas.width - scrollSize;
-        tempCanvas.height = canvas.height - scrollSize;
-        let tempCtx = tempCanvas.getContext('2d');
-        tempCtx.drawImage(canvas, 0, 0, canvas.width - scrollSize, canvas.height - scrollSize, 0, 0, canvas.width - scrollSize, canvas.height - scrollSize);
-        
-        let dataUrl = tempCanvas.toDataURL('image/png');
-        let newWindow = window.open();
-        if (newWindow) {
-            newWindow.document.write('<title>Сохранить чертеж</title><body style="margin:0; background:#2d2d2d; display:flex; justify-content:center; align-items:center; height:100vh;"><img src="' + dataUrl + '" style="border:3px solid #f7a3c0; box-shadow: 0 0 20px rgba(0,0,0,0.5);" title="Нажмите ПКМ -> Сохранить картинку как..."></body>');
-        } else {
-            let link = document.createElement('a');
-            link.download = 'house-plan.png';
-            link.href = dataUrl;
-            link.click();
-        }
-    }
+    let tempCanvas = document.createElement('canvas');
+    tempCanvas.width = canvas.width - scrollSize;
+    tempCanvas.height = canvas.height - scrollSize;
+    let tempCtx = tempCanvas.getContext('2d');
+    
+    tempCtx.drawImage(canvas, 0, 0, tempCanvas.width, tempCanvas.height, 0, 0, tempCanvas.width, tempCanvas.height);
+    
+    let dataUrl = tempCanvas.toDataURL('image/png');
+    
+    let link = document.createElement('a');
+    link.download = 'plan.png';
+    link.href = dataUrl;
+    link.click();
+}
 
-    function exportToPDF() {
-        let printStyle = document.createElement('style');
-        printStyle.innerHTML = '@media print { body * { visibility: hidden; } #editorCanvas, #editorCanvas * { visibility: visible; } #editorCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; } }';
-        document.head.appendChild(printStyle);
-        window.print();
-        document.head.removeChild(printStyle);
-    }
+function exportToPDF() {
+    const { jsPDF } = window.jspdf;
+    
+    let tempCanvas = document.createElement('canvas');
+    let exportW = canvas.width - scrollSize;
+    let exportH = canvas.height - scrollSize;
+    tempCanvas.width = exportW;
+    tempCanvas.height = exportH;
+    
+    let tempCtx = tempCanvas.getContext('2d');
+    tempCtx.drawImage(canvas, 0, 0, exportW, exportH, 0, 0, exportW, exportH);
+    
+    let imgData = tempCanvas.toDataURL('image/jpeg', 1.0);
+    
+    const pdf = new jsPDF({
+        orientation: exportW > exportH ? 'l' : 'p',
+        unit: 'px',
+        format: [exportW, exportH]
+    });
+    
+    pdf.addImage(imgData, 'JPEG', 0, 0, exportW, exportH);
+    pdf.save('plan.pdf');
+}
 
     function setTool(toolName) {
         currentTool = toolName;
@@ -368,18 +448,32 @@
     }
 
     function drawGrid() {
-        ctx.strokeStyle = '#B9C4E0'; 
-        ctx.lineWidth = 1;
-        let currentCellSize = gridSize * scale;
-        let startLineX = Math.floor(-offsetX / currentCellSize) * currentCellSize;
-        let startLineY = Math.floor(-offsetY / currentCellSize) * currentCellSize;
+    ctx.save(); 
+    
+    ctx.shadowBlur = 0;
+    ctx.setLineDash([]); 
+    ctx.strokeStyle = '#B9C4E0';
+    ctx.lineWidth = 1;
+    
+    let currentCellSize = gridSize * scale;
+    let startLineX = Math.floor(-offsetX / currentCellSize) * currentCellSize;
+    let startLineY = Math.floor(-offsetY / currentCellSize) * currentCellSize;
 
-        for (let x = startLineX; x < startLineX + canvas.width + currentCellSize; x += currentCellSize) {
-            ctx.beginPath(); ctx.moveTo(x + offsetX, 0); ctx.lineTo(x + offsetX, canvas.height - scrollSize); ctx.stroke();
-        }
-        for (let y = startLineY; y < startLineY + canvas.height + currentCellSize; y += currentCellSize) {
-            ctx.beginPath(); ctx.moveTo(0, y + offsetY); ctx.lineTo(canvas.width - scrollSize, y + offsetY); ctx.stroke();
-        }
+    for (let x = startLineX; x < startLineX + canvas.width + currentCellSize; x += currentCellSize) {
+        ctx.beginPath(); 
+        ctx.moveTo(x + offsetX, 0); 
+        ctx.lineTo(x + offsetX, canvas.height - scrollSize); 
+        ctx.stroke();
+    }
+    
+    for (let y = startLineY; y < startLineY + canvas.height + currentCellSize; y += currentCellSize) {
+        ctx.beginPath(); 
+        ctx.moveTo(0, y + offsetY); 
+        ctx.lineTo(canvas.width - scrollSize, y + offsetY); 
+        ctx.stroke();
+    }
+
+    ctx.restore(); 
     }
 
     function drawArrowVector(dir, x, y) {
@@ -408,8 +502,8 @@
     }
     function drawScrollbars() {
         const w = canvas.width; const h = canvas.height;
-        ctx.fillStyle = '#F0F0F0'; ctx.fillRect(0, h - scrollSize, w, scrollSize); ctx.fillRect(w - scrollSize, 0, scrollSize, h); 
-        ctx.fillStyle = '#F7A3C0'; ctx.strokeStyle = '#6c2b43'; ctx.lineWidth = 2;
+        ctx.fillStyle = '#F5F5F5'; ctx.fillRect(0, h - scrollSize, w, scrollSize); ctx.fillRect(w - scrollSize, 0, scrollSize, h); 
+        ctx.fillStyle = '#FFCCE5'; ctx.strokeStyle = '#6c2b43'; ctx.lineWidth = 2;
 
         ctx.fillRect(0, h - scrollSize, scrollSize, scrollSize); ctx.strokeRect(0, h - scrollSize, scrollSize, scrollSize);
         if(uiImages.left.complete) ctx.drawImage(uiImages.left, 2, h - scrollSize + 2, scrollSize - 4, scrollSize - 4); else drawArrowVector('left', 0, h - scrollSize);
@@ -429,71 +523,188 @@
     }
 
     function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.save(); ctx.beginPath(); ctx.rect(0, 0, canvas.width - scrollSize, canvas.height - scrollSize); ctx.clip();
-        drawGrid();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#ffffff'; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.save(); 
+    ctx.beginPath(); 
+    ctx.rect(0, 0, canvas.width - scrollSize, canvas.height - scrollSize); 
+    ctx.clip(); 
+    
+    drawGrid();
 
-        objects.forEach(obj => {
-            ctx.save(); if (obj === selectedObject) { ctx.shadowColor = 'red'; ctx.shadowBlur = 10; }
-            let ox = obj.x * scale + offsetX; let oy = obj.y * scale + offsetY;
+    objects.forEach(obj => {
+        ctx.save(); 
+        
+        ctx.shadowBlur = 0; 
+        ctx.shadowColor = 'transparent';
+        
+        if (typeof selectedObject !== 'undefined' && selectedObject === obj) {
+            ctx.shadowBlur = 15;
+            ctx.shadowColor = '#FF0000'; 
+        }
+        
+        let objScale = obj.sizeScale || 1.0;
+        let objAngle = obj.angle || 0;
+        
+        let ox = obj.x * scale + offsetX;
+        let oy = obj.y * scale + offsetY;
 
-            if (obj.type === 'wall' || obj.type === 'room') {
-                ctx.strokeStyle = '#000000'; ctx.lineWidth = 6 * scale; ctx.lineCap = 'square';
-                if (obj.type === 'wall') {
-                    ctx.beginPath(); ctx.moveTo(obj.x1 * scale + offsetX, obj.y1 * scale + offsetY); ctx.lineTo(obj.x2 * scale + offsetX, obj.y2 * scale + offsetY); ctx.stroke();
-                } else {
-                    ctx.strokeRect(obj.x1 * scale + offsetX, obj.y1 * scale + offsetY, (obj.x2 - obj.x1) * scale, (obj.y2 - obj.y1) * scale);
-                }
-                let midX = ((obj.x1 + obj.x2) / 2) * scale + offsetX; let midY = ((obj.y1 + obj.y2) / 2) * scale + offsetY;
-                let length = Math.round(Math.sqrt(Math.pow(obj.x2 - obj.x1, 2) + Math.pow(obj.y2 - obj.y1, 2)) * 100);
-                ctx.fillStyle = '#000000'; ctx.font = `${Math.max(10, currentFontSize * scale)}px ${currentFontFamily}`; ctx.shadowBlur = 0;
-                ctx.fillText(length, midX + 10, midY - 10);
-            } 
-            else if (images[obj.type] && images[obj.type].complete && images[obj.type].naturalWidth > 0) {
-                let img = images[obj.type]; let w = 80 * scale; let h = 80 * scale;
-                if (obj.type === 'window') { w = 80 * scale; h = 20 * scale; } if (obj.type === 'door') { w = 40 * scale; h = 40 * scale; }
-                if (obj.type === 'stairs') { w = 80 * scale; h = 120 * scale; } if (obj.type === 'toilet') { w = 40 * scale; h = 50 * scale; }
-                if (obj.type === 'rakovina') { w = 40 * scale; h = 40 * scale; }
-                ctx.drawImage(img, ox - w/2, oy - h/2, w, h);
-            }
-            else {
-                ctx.shadowBlur = 0; ctx.strokeStyle = '#6c2b43'; ctx.lineWidth = 2 * scale; let rSize = 20 * scale;
-                if (obj.type === 'door') { ctx.beginPath(); ctx.moveTo(ox, oy - rSize); ctx.lineTo(ox, oy + rSize); ctx.lineTo(ox - rSize, oy + rSize * 0.7); ctx.stroke(); } 
-                else if (obj.type === 'window') { ctx.fillStyle = '#C0C0C0'; ctx.fillRect(ox - rSize * 1.5, oy - rSize * 0.3, rSize * 3, rSize * 0.6); ctx.strokeRect(ox - rSize * 1.5, oy - rSize * 0.3, rSize * 3, rSize * 0.6); } 
-                else if (obj.type === 'stairs') { ctx.strokeRect(ox - rSize, oy - rSize * 1.5, rSize * 2, rSize * 3); } 
-                else if (obj.type === 'toilet') { ctx.beginPath(); ctx.arc(ox, oy, rSize * 0.5, 0, Math.PI * 2); ctx.stroke(); } 
-                else if (obj.type === 'rakovina') { ctx.strokeRect(ox - rSize * 0.7, oy - rSize * 0.7, rSize * 1.4, rSize * 1.4); }
-            }
+        if (obj.type === 'wall' || obj.type === 'room' || obj.type === 'arrow') {
+            let globalThickness = parseInt(document.getElementById('wallThicknessInput').value) || 6;
+            let thickness = (obj.type === 'arrow') ? 3 : (obj.thickness || globalThickness);
+
+            ctx.strokeStyle = '#000000'; ctx.lineWidth = thickness * scale; ctx.lineCap = 'square';
             
-            if (obj.type === 'text') {
-                ctx.fillStyle = '#000000'; ctx.font = `${currentFontSize * scale}px ${currentFontFamily}`; ctx.textAlign = 'center'; ctx.shadowBlur = 0;
-                ctx.fillText('Название комнаты', ox, oy); ctx.fillText('30 м2', ox, oy + 20 * scale);
+            if (obj.type === 'wall') {
+                ctx.beginPath(); 
+                ctx.moveTo(obj.x1 * scale + offsetX, obj.y1 * scale + offsetY); 
+                ctx.lineTo(obj.x2 * scale + offsetX, obj.y2 * scale + offsetY); 
+                ctx.stroke();
+            } else if (obj.type === 'room') {
+                ctx.strokeRect(obj.x1 * scale + offsetX, obj.y1 * scale + offsetY, (obj.x2 - obj.x1) * scale, (obj.y2 - obj.y1) * scale);
+            } else if (obj.type === 'arrow') {
+                let x1 = obj.x1 * scale + offsetX; let y1 = obj.y1 * scale + offsetY;
+                let x2 = obj.x2 * scale + offsetX; let y2 = obj.y2 * scale + offsetY;
+                
+                ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+                
+                let angle = Math.atan2(y2 - y1, x2 - x1);
+                let arrowLength = 15 * scale; 
+                
+                ctx.fillStyle = '#000000';
+                ctx.beginPath();
+                ctx.moveTo(x2, y2);
+                ctx.lineTo(x2 - arrowLength * Math.cos(angle - Math.PI / 6), y2 - arrowLength * Math.sin(angle - Math.PI / 6));
+                ctx.lineTo(x2 - arrowLength * Math.cos(angle + Math.PI / 6), y2 - arrowLength * Math.sin(angle + Math.PI / 6));
+                ctx.closePath();
+                ctx.fill();
             }
-            ctx.restore();
-        });
-        ctx.restore(); drawScrollbars();
-    }
 
-    function findObjectAt(x, y) {
-        let worldX = (x - offsetX) / scale; let worldY = (y - offsetY) / scale;
-        for (let i = objects.length - 1; i >= 0; i--) {
-            let obj = objects[i];
-            if (obj.type === 'wall' || obj.type === 'room') {
+            if (obj.type !== 'arrow') {
+                ctx.fillStyle = '#000000'; ctx.font = `${Math.max(10, currentFontSize * scale)}px ${currentFontFamily}`; ctx.shadowBlur = 0;
+                
+                let midX = ((obj.x1 + obj.x2) / 2) * scale + offsetX; 
+                let midY = ((obj.y1 + obj.y2) / 2) * scale + offsetY;
+
                 if (obj.type === 'wall') {
-                    let midX = (obj.x1 + obj.x2) / 2; let midY = (obj.y1 + obj.y2) / 2;
-                    if (Math.abs(obj.x1 - worldX) < 15) return {obj, point: 'p1'}; if (Math.abs(obj.x2 - worldX) < 15) return {obj, point: 'p2'};
-                    if (Math.abs(midX - worldX) < 20 && Math.abs(midY - worldY) < 20) return {obj, point: 'move'};
-                } else {
-                    if (Math.abs(obj.x1 - worldX) < 15 && Math.abs(obj.y1 - worldY) < 15) return {obj, point: 'p1'};
-                    if (Math.abs(obj.x2 - worldX) < 15 && Math.abs(obj.y2 - worldY) < 15) return {obj, point: 'p2'};
-                    if (worldX >= obj.x1 && worldX <= obj.x2 && worldY >= obj.y1 && worldY <= obj.y2) return {obj, point: 'move'};
+                    let dx = obj.x2 - obj.x1;
+                    let dy = obj.y2 - obj.y1;
+                    let lengthInMeters = Math.sqrt(dx * dx + dy * dy) / gridSize;
+                    ctx.fillText(lengthInMeters.toFixed(2) + ' м', midX + 10, midY - 10);
+                } 
+                else if (obj.type === 'room') {
+                    let wInMeters = Math.abs(obj.x2 - obj.x1) / gridSize;
+                    let hInMeters = Math.abs(obj.y2 - obj.y1) / gridSize;
+                    let area = wInMeters * hInMeters;
+
+                    ctx.save();
+                    ctx.textAlign = 'center';
+                    ctx.fillText(area.toFixed(2) + ' м²', midX, midY);
+                    ctx.restore();
                 }
-            } else {
-                let size = 60 / scale; if (worldX >= obj.x - size/2 && worldX <= obj.x + size/2 && worldY >= obj.y - size/2 && worldY <= obj.y + size/2) return {obj, point: 'move'};
             }
         }
-        return null;
+        else if (obj.type === 'napr') {
+            ctx.save();
+            ctx.translate(ox, oy);
+            ctx.rotate((objAngle * Math.PI) / 180);
+            ctx.strokeStyle = '#0000FF'; ctx.lineWidth = 2 * scale; ctx.setLineDash([5, 5]);
+            ctx.beginPath(); ctx.moveTo(-1000 * scale * objScale, 0); ctx.lineTo(1000 * scale * objScale, 0); ctx.stroke();
+            ctx.restore();
+        }
+        else if (images[obj.type] && images[obj.type].complete && images[obj.type].naturalWidth > 0) {
+            let img = images[obj.type]; 
+            let w = 80 * scale * objScale; let h = 80 * scale * objScale;
+            if (obj.type === 'window') { w = 80 * scale * objScale; h = 20 * scale * objScale; } 
+            if (obj.type === 'door') { w = 40 * scale * objScale; h = 40 * scale * objScale; }
+            if (obj.type === 'stairs') { w = 80 * scale * objScale; h = 120 * scale * objScale; } 
+            if (obj.type === 'toilet') { w = 40 * scale * objScale; h = 50 * scale * objScale; }
+            if (obj.type === 'rakovina') { w = 40 * scale * objScale; h = 40 * scale * objScale; }
+            
+            ctx.save();
+            ctx.translate(ox, oy);
+            ctx.rotate((objAngle * Math.PI) / 180);
+            ctx.drawImage(img, -w/2, -h/2, w, h);
+            ctx.restore();
+        }
+        else if (['door', 'window', 'stairs', 'toilet', 'rakovina'].includes(obj.type)) {
+            ctx.save();
+            ctx.translate(ox, oy);
+            ctx.rotate((objAngle * Math.PI) / 180);
+            ctx.shadowBlur = 0; ctx.strokeStyle = '#6c2b43'; ctx.lineWidth = 2 * scale; 
+            let rSize = 20 * scale * objScale;
+            if (obj.type === 'door') { ctx.beginPath(); ctx.moveTo(0, -rSize); ctx.lineTo(0, rSize); ctx.lineTo(-rSize, rSize * 0.7); ctx.stroke(); } 
+            else if (obj.type === 'window') { ctx.fillStyle = '#C0C0C0'; ctx.fillRect(-rSize * 1.5, -rSize * 0.3, rSize * 3, rSize * 0.6); ctx.strokeRect(-rSize * 1.5, -rSize * 0.3, rSize * 3, rSize * 0.6); } 
+            else if (obj.type === 'stairs') { ctx.strokeRect(-rSize, -rSize * 1.5, rSize * 2, rSize * 3); } 
+            else if (obj.type === 'toilet') { ctx.beginPath(); ctx.arc(0, 0, rSize * 0.5, 0, Math.PI * 2); ctx.stroke(); } 
+            else if (obj.type === 'rakovina') { ctx.strokeRect(-rSize * 0.7, -rSize * 0.7, rSize * 1.4, rSize * 1.4); }
+            ctx.restore();
+        }
+        
+        if (obj.type === 'text') {
+            ctx.save();
+            ctx.translate(ox, oy);
+            ctx.rotate((objAngle * Math.PI) / 180);
+            ctx.fillStyle = '#000000'; 
+            ctx.font = `${currentFontSize * scale * objScale}px ${currentFontFamily}`; 
+            ctx.textAlign = 'center'; 
+            ctx.shadowBlur = 0;
+            ctx.fillText(obj.text || "Текст", 0, 0); 
+            ctx.restore();
+        }
+
+        ctx.restore(); 
+    });
+
+    ctx.restore(); 
+    
+    drawScrollbars();
+}
+
+    function findObjectAt(mx, my) {
+    function distToSegment(p, p1, p2) {
+        let l2 = Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+        if (l2 === 0) return Math.hypot(p.x - p1.x, p.y - p1.y);
+        let t = ((p.x - p1.x) * (p2.x - p1.x) + (p.y - p1.y) * (p2.y - p1.y)) / l2;
+        t = Math.max(0, Math.min(1, t));
+        return Math.hypot(p.x - (p1.x + t * (p2.x - p1.x)), p.y - (p1.y + t * (p2.y - p1.y)));
     }
+
+    for (let i = objects.length - 1; i >= 0; i--) {
+        let obj = objects[i];
+
+        if (obj.type === 'wall' || obj.type === 'arrow') {
+            let x1 = obj.x1 * scale + offsetX;
+            let y1 = obj.y1 * scale + offsetY;
+            let x2 = obj.x2 * scale + offsetX;
+            let y2 = obj.y2 * scale + offsetY;
+
+            if (Math.hypot(mx - x1, my - y1) < 12) return { obj: obj, point: 'p1' };
+            if (Math.hypot(mx - x2, my - y2) < 12) return { obj: obj, point: 'p2' };
+            if (distToSegment({x: mx, y: my}, {x: x1, y: y1}, {x: x2, y: y2}) < 8) return { obj: obj, point: 'move' };
+        }
+        else if (obj.type === 'room') {
+            let x1 = obj.x1 * scale + offsetX; let y1 = obj.y1 * scale + offsetY;
+            let x2 = obj.x2 * scale + offsetX; let y2 = obj.y2 * scale + offsetY;
+            if (Math.hypot(mx - x1, my - y1) < 12) return { obj: obj, point: 'p1' };
+            if (Math.hypot(mx - x2, my - y2) < 12) return { obj: obj, point: 'p2' };
+            if (distToSegment({x: mx, y: my}, {x: x1, y: y1}, {x: x2, y: y1}) < 8 ||
+                distToSegment({x: mx, y: my}, {x: x2, y: y1}, {x: x2, y: y2}) < 8 ||
+                distToSegment({x: mx, y: my}, {x: x2, y: y2}, {x: x1, y: y2}) < 8 ||
+                distToSegment({x: mx, y: my}, {x: x1, y: y2}, {x: x1, y: y1}) < 8) {
+                return { obj: obj, point: 'move' };
+            }
+        }
+        else {
+            let ox = obj.x * scale + offsetX;
+            let oy = obj.y * scale + offsetY;
+            if (Math.hypot(mx - ox, my - oy) < 25) return { obj: obj, point: 'move' };
+        }
+    }
+    return null;
+}
     function checkScrollbarClick(x, y) {
         const w = canvas.width; const h = canvas.height; const thumbX = getScrollXThump();
         if (y >= h - scrollSize && y <= h && x >= thumbX.x && x <= thumbX.x + thumbX.w) { isDraggingScrollX = true; dragOffsetX = x - thumbX.x; return true; }
@@ -508,37 +719,198 @@
     }
 
     canvas.addEventListener('wheel', function(e) {
-        e.preventDefault(); const rect = canvas.getBoundingClientRect();
-        let mouseX = e.clientX - rect.left; let mouseY = e.clientY - rect.top;
-        let worldX = (mouseX - offsetX) / scale; let worldY = (mouseY - offsetY) / scale;
-        if (e.deltaY < 0) { scale *= 1.1; } else { scale /= 1.1; }
-        scale = Math.max(minScale, Math.min(maxScale, scale));
-        offsetX = mouseX - worldX * scale; offsetY = mouseY - worldY * scale; draw();
+    e.preventDefault();
+
+    const rect = canvas.getBoundingClientRect();
+    let mouseX = e.clientX - rect.left;
+    let mouseY = e.clientY - rect.top;
+
+    let wheelWorldX = (mouseX - offsetX) / scale;
+    let wheelWorldY = (mouseY - offsetY) / scale;
+
+    if (e.deltaY < 0) {
+        scale = Math.min(3.0, scale + 0.05); 
+    } else {
+        scale = Math.max(0.3, scale - 0.05);
+    }
+
+    offsetX = mouseX - wheelWorldX * scale;
+    offsetY = mouseY - wheelWorldY * scale;
+
+    draw(); 
     }, { passive: false });
 
     canvas.addEventListener('mousedown', function(e) {
-        const rect = canvas.getBoundingClientRect(); let mouseX = e.clientX - rect.left; let mouseY = e.clientY - rect.top;
-        if (e.button === 1) { isPanning = true; panStartX = mouseX - offsetX; panStartY = mouseY - offsetY; return; }
-        if (checkScrollbarClick(mouseX, mouseY)) return;
-        startX = snap((mouseX - offsetX) / scale); startY = snap((mouseY - offsetY) / scale);
+    if (e.target !== canvas) return;
 
-        if (currentTool === 'select') {
-            let target = findObjectAt(mouseX, mouseY);
-            if (target) {
-                selectedObject = target.obj; selectedObject._point = target.point;
-                if (target.obj.type === 'wall' || target.obj.type === 'room') { dragOffsetX = mouseX - (target.obj.x1 * scale); dragOffsetY = mouseY - (target.obj.y1 * scale); } 
-                else { dragOffsetX = mouseX - offsetX - (target.obj.x * scale); dragOffsetY = mouseY - offsetY - (target.obj.y * scale); }
-            } else { selectedObject = null; isPanning = true; panStartX = mouseX - offsetX; panStartY = mouseY - offsetY; }
+    const rect = canvas.getBoundingClientRect(); 
+    let mouseX = e.clientX - rect.left; 
+    let mouseY = e.clientY - rect.top;
+    
+    if (e.button === 1) { isPanning = true; panStartX = mouseX - offsetX; panStartY = mouseY - offsetY; return; }
+    if (checkScrollbarClick(mouseX, mouseY)) return;
+    
+    startX = snap((mouseX - offsetX) / scale); 
+    startY = snap((mouseY - offsetY) / scale);
+
+    if (currentTool === 'select') {
+        // Закрываем инпут, если кликнули мимо него в пустую область холста
+        let activeInput = document.getElementById('active-text-input');
+        if (activeInput) activeInput.blur();
+
+        let target = findObjectAt(mouseX, mouseY);
+        if (target) {
+            selectedObject = target.obj; 
+            selectedObject._point = target.point;
+            
+            if (target.obj.type === 'wall' || target.obj.type === 'room' || target.obj.type === 'arrow') { 
+                dragOffsetX = mouseX - (target.obj.x1 * scale); 
+                dragOffsetY = mouseY - (target.obj.y1 * scale); 
+            } else { 
+                dragOffsetX = mouseX - offsetX - (target.obj.x * scale); 
+                dragOffsetY = mouseY - offsetY - (target.obj.y * scale); 
+            }
+            isDrawing = true;
+        } else { 
+            selectedObject = null; 
+            isPanning = true; 
+            panStartX = mouseX - offsetX; 
+            panStartY = mouseY - offsetY; 
+        }
+        draw();
+    } 
+    else if (currentTool === 'wall' || currentTool === 'room' || currentTool === 'arrow') {
+        isDrawing = true; 
+        let currentThickness = parseInt(document.getElementById('wallThicknessInput').value) || 6;
+        let newObj = { 
+            type: currentTool, 
+            x1: startX, 
+            y1: startY, 
+            x2: startX, 
+            y2: startY,
+            thickness: currentThickness 
+        };
+        objects.push(newObj); 
+        selectedObject = newObj;
+    }
+    else {
+        let newObj = { type: currentTool, x: startX, y: startY }; 
+        if (currentTool === 'text') {
+            newObj.text = "Текст";
+        }
+        objects.push(newObj); 
+        saveHistory(); 
+        selectedObject = newObj; 
+        setTool('select'); 
+        draw();
+    }
+});
+
+canvas.addEventListener('dblclick', function(e) {
+    if (currentTool !== 'select') return;
+
+    const rect = canvas.getBoundingClientRect(); 
+    let mouseX = e.clientX - rect.left; 
+    let mouseY = e.clientY - rect.top;
+
+    let target = findObjectAt(mouseX, mouseY);
+    // Проверяем, что дважды кликнули именно по тексту
+    if (target && target.obj.type === 'text') {
+        let textObj = target.obj;
+        createTextInputElement(textObj, rect, mouseX, mouseY);
+    }
+});
+
+function createTextInputElement(textObj, rect, mouseX, mouseY) {
+    let oldInput = document.getElementById('active-text-input');
+    if (oldInput) oldInput.remove();
+
+    let input = document.createElement('input');
+    input.id = 'active-text-input';
+    input.type = 'text';
+    input.value = textObj.text || '';
+    
+    input.style.position = 'absolute';
+    input.style.left = (rect.left + mouseX - 65) + 'px';
+    input.style.top = (rect.top + mouseY - 12) + 'px';
+    input.style.width = "130px";
+    input.style.height = "24px";
+    input.style.font = "14px Arial";
+    input.style.zIndex = "100000";
+    input.style.textAlign = "center";
+
+    document.body.appendChild(input);
+    
+    setTimeout(() => {
+        input.focus();
+        input.select();
+    }, 30);
+
+    function saveTextValue() {
+        if (document.body.contains(input)) {
+            textObj.text = input.value.trim() || "Текст";
+            input.remove();
+            saveHistory();
             draw();
-        } 
-        else if (currentTool === 'wall' || currentTool === 'room') {
-            isDrawing = true; let newObj = { type: currentTool, x1: startX, y1: startY, x2: startX, y2: startY };
-            objects.push(newObj); selectedObject = newObj;
-        } 
-        else {
-            let newObj = { type: currentTool, x: startX, y: startY }; objects.push(newObj); selectedObject = newObj; setTool('select'); draw();
+        }
+    }
+
+    input.addEventListener('blur', saveTextValue);
+    input.addEventListener('keydown', function(ev) {
+        if (ev.key === 'Enter') saveTextValue();
+        if (ev.key === 'Escape') { 
+            input.remove(); 
+            draw(); 
         }
     });
+}
+
+function findObjectAt(mx, my) {
+    function distToSegment(p, p1, p2) {
+        let l2 = Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+        if (l2 === 0) return Math.hypot(p.x - p1.x, p.y - p1.y);
+        let t = ((p.x - p1.x) * (p2.x - p1.x) + (p.y - p1.y) * (p2.y - p1.y)) / l2;
+        t = Math.max(0, Math.min(1, t));
+        return Math.hypot(p.x - (p1.x + t * (p2.x - p1.x)), p.y - (p1.y + t * (p2.y - p1.y)));
+    }
+
+    let globalThickness = parseInt(document.getElementById('wallThicknessInput').value) || 6;
+
+    for (let i = objects.length - 1; i >= 0; i--) {
+        let obj = objects[i];
+        let t = (obj.thickness || globalThickness) * scale;
+        let clickRadius = Math.max(8, t / 2 + 4);
+
+        if (obj.type === 'wall' || obj.type === 'arrow') {
+            let x1 = obj.x1 * scale + offsetX;
+            let y1 = obj.y1 * scale + offsetY;
+            let x2 = obj.x2 * scale + offsetX;
+            let y2 = obj.y2 * scale + offsetY;
+
+            if (Math.hypot(mx - x1, my - y1) < 12) return { obj: obj, point: 'p1' };
+            if (Math.hypot(mx - x2, my - y2) < 12) return { obj: obj, point: 'p2' };
+            if (distToSegment({x: mx, y: my}, {x: x1, y: y1}, {x: x2, y: y2}) < clickRadius) return { obj: obj, point: 'move' };
+        }
+        else if (obj.type === 'room') {
+            let x1 = obj.x1 * scale + offsetX; let y1 = obj.y1 * scale + offsetY;
+            let x2 = obj.x2 * scale + offsetX; let y2 = obj.y2 * scale + offsetY;
+            if (Math.hypot(mx - x1, my - y1) < 12) return { obj: obj, point: 'p1' };
+            if (Math.hypot(mx - x2, my - y2) < 12) return { obj: obj, point: 'p2' };
+            if (distToSegment({x: mx, y: my}, {x: x1, y: y1}, {x: x2, y: y1}) < clickRadius ||
+                distToSegment({x: mx, y: my}, {x: x2, y: y1}, {x: x2, y: y2}) < clickRadius ||
+                distToSegment({x: mx, y: my}, {x: x2, y: y2}, {x: x1, y: y2}) < clickRadius ||
+                distToSegment({x: mx, y: my}, {x: x1, y: y2}, {x: x1, y: y1}) < clickRadius) {
+                return { obj: obj, point: 'move' };
+            }
+        }
+        else {
+            let ox = obj.x * scale + offsetX;
+            let oy = obj.y * scale + offsetY;
+            if (Math.hypot(mx - ox, my - oy) < 25) return { obj: obj, point: 'move' };
+        }
+    }
+    return null;
+}
 
     canvas.addEventListener('mousemove', function(e) {
         const rect = canvas.getBoundingClientRect(); let mouseX = e.clientX - rect.left; let mouseY = e.clientY - rect.top;
@@ -564,17 +936,105 @@
             }
             draw();
         } 
-        else if ((currentTool === 'wall' || currentTool === 'room') && isDrawing) {
+        else if ((currentTool === 'wall' || currentTool === 'room' || currentTool === 'arrow') && isDrawing) {
             let currentObj = objects[objects.length - 1]; currentObj.x2 = snappedWorldX; currentObj.y2 = snappedWorldY; draw();
         }
     });
 
     canvas.addEventListener('mouseup', function() {
+        if (isDrawing) {
+            saveHistory();
+        }
         isPanning = false; isDrawing = false; isDraggingScrollX = false; isDraggingScrollY = false;
         if (selectedObject && selectedObject._point) { selectedObject._point = null; }
+        if (currentTool === 'arrow') { setTool('select'); }
     });
 
     draw();
+
+    window.addEventListener('keydown', function(e) {
+        if (!selectedObject) return;
+        
+        if (e.key === 'r' || e.key === 'R' || e.key === 'к' || e.key === 'К') {
+            if (['door', 'window', 'stairs', 'toilet', 'rakovina', 'text', 'arrow', 'napr'].includes(selectedObject.type)) {
+                selectedObject.angle = ((selectedObject.angle || 0) + 90) % 360;
+                draw();
+                saveHistory();
+            }
+        }
+        if (e.key === '+' || e.key === '=') {
+            selectedObject.sizeScale = (selectedObject.sizeScale || 1.0) + 0.1;
+            draw();
+            saveHistory();
+        }
+        if (e.key === '-' || e.key === '_') {
+            selectedObject.sizeScale = Math.max(0.2, (selectedObject.sizeScale || 1.0) - 0.1);
+            draw();
+            saveHistory();
+        }
+    });
+
+    function calculatePolygonArea(points) {
+        if (points.length < 3) return 0;
+        let area = 0;
+        for (let i = 0; i < points.length; i++) {
+            let j = (i + 1) % points.length;
+            area += points[i].x * points[j].y;
+            area -= points[j].x * points[i].y;
+        }
+        area = Math.abs(area) / 2;
+        
+        let pixelsPerMeter = 40;
+        let areaInMeters = area / (pixelsPerMeter * pixelsPerMeter);
+        return areaInMeters;
+    }
+
+    function getRectangleAreaM2(x1, y1, x2, y2) {
+        let wMeters = Math.abs(x2 - x1) / 40;
+        let hMeters = Math.abs(y2 - y1) / 40;
+        return (wMeters * hMeters);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const triggers = document.querySelectorAll('.menu-trigger');
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const container = this.closest('.menu-item-container');
+            if (!container) return;
+            
+            const menu = container.querySelector('.dropdown-menu');
+            if (!menu) return;
+
+            const isCurrentlyOpen = menu.style.display === 'block';
+
+            closeAllMenus();
+
+            if (!isCurrentlyOpen) {
+                menu.style.setProperty('display', 'block', 'important');
+                this.classList.add('active');
+            }
+        });
+    });
+
+    function closeAllMenus() {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+        document.querySelectorAll('.menu-trigger').forEach(trig => {
+            trig.classList.remove('active');
+        });
+    }
+
+    window.addEventListener('click', closeAllMenus);
+
+    const styleFix = document.createElement('style');
+    styleFix.innerHTML = '.menu-item-container:hover .dropdown-menu { display: none; }';
+    document.head.appendChild(styleFix);
+});
 </script>
 </body>
 </html>
